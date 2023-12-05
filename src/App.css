@@ -1,0 +1,53 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  font-size: 2.5rem;
+  color: var(--btn-color);
+  border-radius: 30px;
+  background-color: var(--main-color);
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+.btn {
+  font-weight: 600;
+  padding: 2rem;
+  margin: 0.5rem;
+  background-color: #272b33;
+  border: none;
+  border-radius: 10px;
+  color: var(--back-color);
+  font-size: 3.5rem;
+  width: 6.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, outline 5s ease;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--btn-color);
+  padding: 2rem;
+}
+.output {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.btn:hover,
+.btn:active {
+  background-color: var(--main-color);
+  outline: #b89ab3 2px solid;
+  transition: all 0.3s;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

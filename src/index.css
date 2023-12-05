@@ -1,0 +1,24 @@
+:root {
+  font-family: "Rubik", sans-serif;
+  line-height: 1.5;
+
+  --main-color: #22252d;
+  --btn-color: #b89ab3;
+  --back-color: #f5f3f3;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--back-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+}
