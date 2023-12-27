@@ -25,13 +25,13 @@ function App() {
       </section>
       <section id="calculator">
         <div className="numbers">
-          {numbers.map((num) => (
-            <Button key={num} value={numbers.indexOf(num)} />
+          {numbers.map((num, index) => (
+            <Button key={num} value={index} />
           ))}
         </div>
         <div className="operators">
-          {operators.map((num) => (
-            <Operator key={num} />
+          {operators.map((elem, index) => (
+            <Operator key={index} type={elem} />
           ))}
         </div>
       </section>
