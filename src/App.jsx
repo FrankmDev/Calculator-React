@@ -1,6 +1,19 @@
 import "./App.css";
-import Button from "./Button";
-import Operator from "./Operator";
+
+const Button = ({ key, value }) => {
+  return (
+    <button className="btn" id={key}>
+      {value}
+    </button>
+  );
+};
+const Operator = ({ key, type }) => {
+  return (
+    <button className="btn" id={key}>
+      {type}
+    </button>
+  );
+};
 
 function App() {
   const numbers = [
@@ -15,6 +28,7 @@ function App() {
     "eight",
     "nine",
   ];
+
   const operators = ["add", "subtract", "multiply", "divide"];
 
   return (
