@@ -43,11 +43,18 @@
 .btn:hover,
 .btn:active {
   background-color: var(--main-color);
-  outline: #b89ab3 2px solid;
+  outline: #b89ab3 1px solid;
   transition: all 0.3s;
 }
 
+#calculator {
+  display: flex;
+}
 .numbers {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+.operators {
+  display: flex;
+  flex-direction: column;
 }

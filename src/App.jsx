@@ -2,7 +2,7 @@ import "./App.css";
 
 const Button = ({ key, value }) => {
   return (
-    <button className="btn" id={key}>
+    <button type="button" className="btn" id={key}>
       {value}
     </button>
   );
@@ -16,20 +16,9 @@ const Operator = ({ key, type }) => {
 };
 
 function App() {
-  const numbers = [
-    "zero",
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-  ];
+  const numbers = [7, 8, 9, 4, 5, 6, 1, 2, 3, ".", 0, "="];
 
-  const operators = ["add", "subtract", "multiply", "divide"];
+  const ops = ["/", "*", "-", "+"];
 
   return (
     <main className="container">
@@ -38,13 +27,14 @@ function App() {
         <div className="output">0</div>
       </section>
       <section id="calculator">
+        <Button key={"C"} value={"C"} />
         <div className="numbers">
           {numbers.map((num, index) => (
-            <Button key={num} value={index} />
+            <Button key={index} value={num} />
           ))}
         </div>
         <div className="operators">
-          {operators.map((elem, index) => (
+          {ops.map((elem, index) => (
             <Operator key={index} type={elem} />
           ))}
         </div>
