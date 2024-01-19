@@ -4,7 +4,7 @@
   padding: 2rem;
   text-align: center;
   font-family: "Poppins", sans-serif;
-  --main-color: #252525;
+  --main-color: #272727;
   --btn-color: #b89ab3;
   --back-color: #f5f3f3;
 }
@@ -25,21 +25,22 @@ button {
   color: var(--back-color);
   font-size: 3.5rem;
   width: 4rem;
-  height: 5rem;
+  height: 4.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease, outline 5s ease;
 }
 
-.display {
+#display {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid var(--btn-color);
-  padding: 2rem;
+  padding: 0.5rem;
+  gap: 1.5rem;
 }
 .output {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .btn-op,
@@ -52,4 +53,12 @@ button:active {
   background-color: var(--main-color);
   outline: #b89ab3 2px solid;
   transition: all 0.3s;
+}
+/* C */
+
+#clear {
+  width: 100%;
+  height: 2.5rem;
+  margin-top: 1rem;
+  background-color: #2b2b2b;
 }
