@@ -3,27 +3,43 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
+  const [input, setInput] = useState("0");
   const [result, setResult] = useState("");
 
-  const handlePress = (e) => {
-    setResult(result.concat(e.target.value));
+  const handleNumberClick = (value) => {
+    setInput((prevInput) => {
+      return prevInput === "0" ? value : prevInput + value;
+    });
   };
 
-  const handleClear = () => setResult("");
+  const handleOperatorClick = (operator) => {
+    setInput((prevInput) => {
+      return result ? result + operator : prevInput + operator;
+    });
+  };
+
+  const handleDecimalClick = () => {
+    setInput((prevInput) => {
+      return prevInput.includes(".") ? prevInput : prevInput + ".";
+    });
+  };
+
+  const handleClear = () => {
+    setInput("0");
+    setResult("");
+  };
 
   const handleEqual = () => {
-    calculate();
+    try {
+      setResult(eval(input).toString());
+    } catch (error) {
+      setResult("Error");
+    }
   };
 
-  const calculate = () => {
-    setResult(eval(result));
-  };
   return (
     <section className="container rounded-xl overflow-hidden p-5 relative">
-      <div id="display">
-        <div className="input">{result}</div>
-        <div className="output">{result}</div>
-      </div>
+      <div id="display">{result || input}</div>
       <button
         id="clear"
         className="btn-number"
@@ -38,7 +54,7 @@ function App() {
           id="seven"
           className="btn-number"
           value="7"
-          onClick={handlePress}
+          onClick={handleNumberClick}
         >
           7
         </button>
@@ -46,7 +62,7 @@ function App() {
           id="eight"
           className="btn-number"
           value="8"
-          onClick={handlePress}
+          onClick={handleNumberClick}
         >
           8
         </button>
@@ -54,7 +70,7 @@ function App() {
           id="nine"
           className="btn-number"
           value="9"
-          onClick={handlePress}
+          onClick={handleNumberClick}
         >
           9
         </button>
@@ -62,7 +78,7 @@ function App() {
           id="multiply"
           className="btn-op"
           value="*"
-          onClick={handlePress}
+          onClick={handleOperatorClick}
         >
           *
         </button>
@@ -71,7 +87,7 @@ function App() {
           id="four"
           className="btn-number"
           value="4"
-          onClick={handlePress}
+          onClick={handleNumberClick}
         >
           4
         </button>
@@ -79,28 +95,48 @@ function App() {
           id="five"
           className="btn-number"
           value="5"
-          onClick={handlePress}
+          onClick={handleNumberClick}
         >
           5
         </button>
-        <button id="six" className="btn-number" value="6" onClick={handlePress}>
+        <button
+          id="six"
+          className="btn-number"
+          value="6"
+          onClick={handleNumberClick}
+        >
           6
         </button>
-        <button id="divide" className="btn-op" value="/" onClick={handlePress}>
+        <button
+          id="divide"
+          className="btn-op"
+          value="/"
+          onClick={handleOperatorClick}
+        >
           /
         </button>
         <br />
-        <button id="one" className="btn-number" value="1" onClick={handlePress}>
+        <button
+          id="one"
+          className="btn-number"
+          value="1"
+          onClick={handleNumberClick}
+        >
           1
         </button>
-        <button id="two" className="btn-number" value="2" onClick={handlePress}>
+        <button
+          id="two"
+          className="btn-number"
+          value="2"
+          onClick={handleNumberClick}
+        >
           2
         </button>
         <button
           id="three"
           className="btn-number"
           value="3"
-          onClick={handlePress}
+          onClick={handleNumberClick}
         >
           3
         </button>
@@ -108,21 +144,36 @@ function App() {
           id="subtract"
           className="btn-op"
           value="-"
-          onClick={handlePress}
+          onClick={handleOperatorClick}
         >
           -
         </button>
         <br />
-        <button id="decimal" className="btn-reload">
+        <button
+          id="decimal"
+          className="btn-reload"
+          value="."
+          onClick={handleDecimalClick}
+        >
           .
         </button>
-        <button id="zero" className="btn-number">
+        <button
+          id="zero"
+          className="btn-number"
+          value="-"
+          onClick={handleNumberClick}
+        >
           0
         </button>
         <button id="equals" className="btn-equal" onClick={handleEqual}>
           =
         </button>
-        <button id="add" className="btn-op" value="+" onClick={handlePress}>
+        <button
+          id="add"
+          className="btn-op"
+          value="+"
+          onClick={handleOperatorClick}
+        >
           +
         </button>
       </div>
