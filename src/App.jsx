@@ -10,6 +10,7 @@ function App() {
     setInput((prevInput) => {
       return prevInput === "0" ? value : prevInput + value;
     });
+    setResult("");
   };
 
   const handleOperatorClick = (operator) => {
@@ -31,7 +32,8 @@ function App() {
 
   const handleEqual = () => {
     try {
-      setResult(eval(input).toString());
+      const evalResult = eval(input);
+      setResult(evalResult.toString());
     } catch (error) {
       setResult("Error");
     }
@@ -160,12 +162,17 @@ function App() {
         <button
           id="zero"
           className="btn-number"
-          value="-"
+          value="0"
           onClick={handleNumberClick}
         >
           0
         </button>
-        <button id="equals" className="btn-equal" onClick={handleEqual}>
+        <button
+          id="equals"
+          className="btn-equal"
+          onClick={handleEqual}
+          value="="
+        >
           =
         </button>
         <button
