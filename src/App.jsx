@@ -7,6 +7,7 @@ function App() {
   const [result, setResult] = useState("");
 
   const handleNumberClick = (value) => {
+    console.log(value);
     setInput((prevInput) => {
       return prevInput === "0" ? value : prevInput + value;
     });
@@ -56,7 +57,7 @@ function App() {
           id="seven"
           className="btn-number"
           value="7"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           7
         </button>
@@ -64,7 +65,7 @@ function App() {
           id="eight"
           className="btn-number"
           value="8"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           8
         </button>
@@ -72,7 +73,7 @@ function App() {
           id="nine"
           className="btn-number"
           value="9"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           9
         </button>
@@ -80,7 +81,7 @@ function App() {
           id="multiply"
           className="btn-op"
           value="*"
-          onClick={handleOperatorClick}
+          onClick={() => handleOperatorClick}
         >
           *
         </button>
@@ -89,7 +90,7 @@ function App() {
           id="four"
           className="btn-number"
           value="4"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           4
         </button>
@@ -97,7 +98,7 @@ function App() {
           id="five"
           className="btn-number"
           value="5"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           5
         </button>
@@ -105,7 +106,7 @@ function App() {
           id="six"
           className="btn-number"
           value="6"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           6
         </button>
@@ -113,7 +114,7 @@ function App() {
           id="divide"
           className="btn-op"
           value="/"
-          onClick={handleOperatorClick}
+          onClick={() => handleOperatorClick}
         >
           /
         </button>
@@ -122,7 +123,7 @@ function App() {
           id="one"
           className="btn-number"
           value="1"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           1
         </button>
@@ -130,7 +131,7 @@ function App() {
           id="two"
           className="btn-number"
           value="2"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           2
         </button>
@@ -138,7 +139,7 @@ function App() {
           id="three"
           className="btn-number"
           value="3"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           3
         </button>
@@ -146,7 +147,7 @@ function App() {
           id="subtract"
           className="btn-op"
           value="-"
-          onClick={handleOperatorClick}
+          onClick={() => handleOperatorClick}
         >
           -
         </button>
@@ -163,7 +164,7 @@ function App() {
           id="zero"
           className="btn-number"
           value="0"
-          onClick={handleNumberClick}
+          onClick={() => handleNumberClick}
         >
           0
         </button>
@@ -179,7 +180,7 @@ function App() {
           id="add"
           className="btn-op"
           value="+"
-          onClick={handleOperatorClick}
+          onClick={() => handleOperatorClick}
         >
           +
         </button>
