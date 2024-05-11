@@ -3,185 +3,62 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [input, setInput] = useState("0");
-  const [result, setResult] = useState("");
-
-  const handleNumberClick = (value) => {
-    console.log(value);
-    setInput((prevInput) => {
-      return prevInput === "0" ? value : prevInput + value;
-    });
-    setResult("");
-  };
-
-  const handleOperatorClick = (operator) => {
-    setInput((prevInput) => {
-      return result ? result + operator : prevInput + operator;
-    });
-  };
-
-  const handleDecimalClick = () => {
-    setInput((prevInput) => {
-      return prevInput.includes(".") ? prevInput : prevInput + ".";
-    });
-  };
-
-  const handleClear = () => {
-    setInput("0");
-    setResult("");
-  };
-
-  const handleEqual = () => {
-    try {
-      const evalResult = eval(input);
-      setResult(evalResult.toString());
-    } catch (error) {
-      setResult("Error");
-    }
-  };
-
   return (
     <section className="container rounded-xl overflow-hidden p-5 relative">
-      <div id="display">{result || input}</div>
-      <button
-        id="clear"
-        className="btn-number"
-        value="7"
-        type="reset"
-        onClick={handleClear}
-      >
+      <div id="display">0</div>
+      <button id="clear" className="btn-number" type="reset">
         C
       </button>
       <div className="calculator">
-        <button
-          id="seven"
-          className="btn-number"
-          value="7"
-          onClick={() => handleNumberClick}
-        >
+        <button id="seven" className="btn-number" value="7">
           7
         </button>
-        <button
-          id="eight"
-          className="btn-number"
-          value="8"
-          onClick={() => handleNumberClick}
-        >
+        <button id="eight" className="btn-number" value="8">
           8
         </button>
-        <button
-          id="nine"
-          className="btn-number"
-          value="9"
-          onClick={() => handleNumberClick}
-        >
+        <button id="nine" className="btn-number" value="9">
           9
         </button>
-        <button
-          id="multiply"
-          className="btn-op"
-          value="*"
-          onClick={() => handleOperatorClick}
-        >
+        <button id="multiply" className="btn-op" value="*">
           *
         </button>
         <br />
-        <button
-          id="four"
-          className="btn-number"
-          value="4"
-          onClick={() => handleNumberClick}
-        >
+        <button id="four" className="btn-number" value="4">
           4
         </button>
-        <button
-          id="five"
-          className="btn-number"
-          value="5"
-          onClick={() => handleNumberClick}
-        >
+        <button id="five" className="btn-number" value="5">
           5
         </button>
-        <button
-          id="six"
-          className="btn-number"
-          value="6"
-          onClick={() => handleNumberClick}
-        >
+        <button id="six" className="btn-number" value="6">
           6
         </button>
-        <button
-          id="divide"
-          className="btn-op"
-          value="/"
-          onClick={() => handleOperatorClick}
-        >
+        <button id="divide" className="btn-op" value="/">
           /
         </button>
         <br />
-        <button
-          id="one"
-          className="btn-number"
-          value="1"
-          onClick={() => handleNumberClick}
-        >
+        <button id="one" className="btn-number" value="1">
           1
         </button>
-        <button
-          id="two"
-          className="btn-number"
-          value="2"
-          onClick={() => handleNumberClick}
-        >
+        <button id="two" className="btn-number" value="2">
           2
         </button>
-        <button
-          id="three"
-          className="btn-number"
-          value="3"
-          onClick={() => handleNumberClick}
-        >
+        <button id="three" className="btn-number" value="3">
           3
         </button>
-        <button
-          id="subtract"
-          className="btn-op"
-          value="-"
-          onClick={() => handleOperatorClick}
-        >
+        <button id="subtract" className="btn-op" value="-">
           -
         </button>
         <br />
-        <button
-          id="decimal"
-          className="btn-reload"
-          value="."
-          onClick={handleDecimalClick}
-        >
+        <button id="decimal" className="btn-reload" value=".">
           .
         </button>
-        <button
-          id="zero"
-          className="btn-number"
-          value="0"
-          onClick={() => handleNumberClick}
-        >
+        <button id="zero" className="btn-number" value="0">
           0
         </button>
-        <button
-          id="equals"
-          className="btn-equal"
-          onClick={handleEqual}
-          value="="
-        >
+        <button id="equals" className="btn-equal" value="=">
           =
         </button>
-        <button
-          id="add"
-          className="btn-op"
-          value="+"
-          onClick={() => handleOperatorClick}
-        >
+        <button id="add" className="btn-op" value="+">
           +
         </button>
       </div>
